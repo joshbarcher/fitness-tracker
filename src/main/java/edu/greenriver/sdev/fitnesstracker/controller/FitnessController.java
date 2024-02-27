@@ -12,8 +12,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/fitness")
 public class FitnessController {
-    @Autowired
     private FitnessService service;
+
+    public FitnessController(FitnessService service) {
+        this.service = service;
+    }
 
     @GetMapping("/records")
     public ResponseEntity<List<FitnessRecord>> getAllRecords() {

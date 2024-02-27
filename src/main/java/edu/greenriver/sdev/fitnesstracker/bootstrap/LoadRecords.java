@@ -9,10 +9,12 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 
 @Component
-public class LoadRecords implements CommandLineRunner
-{
-    @Autowired
+public class LoadRecords implements CommandLineRunner {
     private FitnessService service;
+
+    public LoadRecords(FitnessService service) {
+        this.service = service;
+    }
 
     @Override
     public void run(String... args) throws Exception {
